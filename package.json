@@ -1,16 +1,16 @@
 {
   "name": "web-scale",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "web-scale.js",
   "repository": "https://github.com/hegeda14/web-scale.git",
   "author": "hegeda14",
   "license": "GPL-3.0",
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "latest",
-    "@polymer/paper-button": "latest",
-    "@polymer/paper-input": "latest",
-    "@polymer/iron-icons": "latest",
-    "@polymer/iron-icon": "latest",
-    "@polymer/polymer": "latest"
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/paper-button": "^3.0.0",
+    "@polymer/paper-input": "^3.0.0",
+    "@polymer/iron-icons": "^3.0.0",
+    "@polymer/iron-icon": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
   }
 }

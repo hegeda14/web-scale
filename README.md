@@ -7,9 +7,10 @@ Utilizes the WebHID API so only Chromium browser and derivatives are supported
 ## Good-to-know
 
   * Developed with and tested on a Dymo M5-EMEA Postal Scale
-  * Tested under Linux only, udev rule included
+  * Tested under Linux and Windows, Chromium 97 & Chrome 92 respectively, udev rule included
   * Configurable scale settings, button texts, small frontend provided
   * Retrieve weight and unit measured
+  * If no supportion detected, the element removes itself from the DOM
 
 ## Sources
   * [Weight Logic source](https://github.com/sparkfun/usb-scale)

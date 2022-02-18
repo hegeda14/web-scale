@@ -6,6 +6,7 @@ import '@polymer/iron-icons/iron-icons.js';
 import '@polymer/iron-icon/iron-icon.js';
 
 class WebScale extends PolymerElement {
+  static get is() { return 'web-scale'; }
   static get properties() {
     return {
       weight: {
@@ -63,7 +64,7 @@ class WebScale extends PolymerElement {
 
       <div id="container" class="layout horizontal center" hidden$="[[!frontend]]">
         <iron-icon icon="[[ _resolveIcon(connected) ]]"></iron-icon>
-        <paper-input label="[[label]]" value="[[weight]]" class="flex">
+        <paper-input label="[[label]]" value="[[weight]]" class="flex" readonly>
           <div slot="suffix">[[unit]]</div>
         </paper-input>
         <paper-button raised on-tap="_buttonTap">[[ _resolveButtonText(connected) ]]</paper-button>
@@ -147,8 +148,8 @@ class WebScale extends PolymerElement {
     }
   }
 
-  constructor() {
-    super();
+  ready() {
+    super.ready();
 
     if (!navigator.hid) {
       console.error('not_supported');
@@ -170,4 +171,4 @@ class WebScale extends PolymerElement {
   }
 }
 
-customElements.define('web-scale', WebScale);
+customElements.define(WebScale.is, WebScale);
