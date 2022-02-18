@@ -1,8 +1,8 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/web-scale.js",
+  "shell": "web-scale.js",
   "sources": [
-   "src/web-scale.js",
+   "web-scale.js",
    "package.json"
   ],
   "extraDependencies": [
