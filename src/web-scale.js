@@ -118,7 +118,7 @@ class WebScale extends PolymerElement {
         /*
           How it works: (http://www.antradar.com/blog-dymo-usb-scale-interface-specs)
           - Data length: 5 bytes
-            * (1.) 0-7: Misc. flags / Unused
+            * (1.) 0-7: Misc. flags / 5 - negative, 2 - zero, 4 - positive
             * (2.) 8-15: Unit (0x02 Gram /2/, 0x0b Ounce /11/)
             * (3.) 16-23: Scaling factor, negative power of 10
             * (4.) 24-31: Lower scale reading
@@ -130,9 +130,10 @@ class WebScale extends PolymerElement {
         // Unit
         let dataMode = data.getInt8(1);
         this.set('unit', dataMode == this.config.dataModeOunces ? 'oz' : 'g');
+        let sign = data.getInt8(0) == 5 ? -1 : 1;
         // The weight calculation
         let rawWeight = (data.getUint8(3) + data.getUint8(4) * 256) / (10 ** (data.getInt8(2) * -1));
-        this.set('weight', rawWeight);
+        this.set('weight', rawWeight * sign);
       });
 
       scale.open();
