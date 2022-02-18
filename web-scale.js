@@ -10,11 +10,13 @@ class WebScale extends PolymerElement {
     return {
       weight: {
         type: Number,
-        value: 0
+        value: 0,
+        notify: true
       },
       unit: {
         type: String,
-        value: 'g'
+        value: 'g',
+        notify: true
       },
       label: {
         type: String,
@@ -33,7 +35,8 @@ class WebScale extends PolymerElement {
       },
       connected: {
         type: Boolean,
-        value: false
+        value: false,
+        notify: true
       },
       frontend: {
         type: Boolean,
@@ -89,7 +92,6 @@ class WebScale extends PolymerElement {
     });
 
     if (scale && scale.length == 1) this.setup(scale[0]);
-
   }
 
   async reconnect() {

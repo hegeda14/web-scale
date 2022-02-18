@@ -1,0 +1,4 @@
+SUBSYSTEM=="input", GROUP="input", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="8003", MODE:="666", GROUP="plugdev"
+KERNEL=="hiddev*", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="8003", MODE="0666", GROUP="plugdev"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="8003", MODE="0666", GROUP="plugdev"
