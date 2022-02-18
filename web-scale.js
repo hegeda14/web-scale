@@ -113,6 +113,8 @@ class WebScale extends PolymerElement {
     if (scale && scale.length == 1) scale[0].close();
     this.set('connected', false);
     this.set('label', 'N/A');
+    this.set('weight', 0);
+    this.set('unit', 'g');
   }
 
   setup(scale) {
@@ -165,6 +167,8 @@ class WebScale extends PolymerElement {
     navigator.hid.addEventListener('disconnect', (event) => {
       this.set('connected', false);
       this.set('label', 'N/A');
+      this.set('weight', 0);
+      this.set('unit', 'g');
     });
 
     this.reconnect();
